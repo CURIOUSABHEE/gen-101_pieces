@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Fun Facts</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+
+  .fun-facts-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-left: 5px solid #3498db;
+  }
+</style>
+</head>
+<body>
+<div class="fun-facts-container">
+  <h1>Ten Random Fun Facts</h1>
+  <ul id="fun-facts-list"></ul>
+  <button id="fun-fact-btn">Show Random Fun Fact</button>
+</div>
+<script>
+  const funFacts = [
+    "Bananas are berries, but strawberries aren't.",
+    "The Eiffel Tower can be 15 cm taller during the summer.",
+    "Octopuses have three hearts.",
+    "Honey never spoils.",
+    "A group of flamingos is called a flamboyance.",
+    "The shortest war in history lasted only 38 minutes.",
+    "The unicorn is the national animal of Scotland.",
+    "The average person walks the equivalent of five times around the world in their lifetime.",
+    "The first oranges weren't orange.",
+    "Cows have best friends."
+  ];
+
+  const funFactBtn = document.getElementById('fun-fact-btn');
+  const funFactsList = document.getElementById('fun-facts-list');
+
+  funFactBtn.addEventListener('click', () => {
+    const randomIndex = Math.floor(Math.random() * funFacts.length);
+    const randomFact = funFacts[randomIndex];
+    const li = document.createElement('li');
+    li.textContent = randomFact;
+    funFactsList.innerHTML = ''; // Clear previous fun fact
+    funFactsList.appendChild(li);
+  });
+</script>
+</body>
+</html>
